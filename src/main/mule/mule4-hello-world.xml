@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+    xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway"
+    xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
+    xmlns:http="http://www.mulesoft.org/schema/mule/http" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd">
+	
+    <http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config">
+        <http:listener-connection host="0.0.0.0" port="${http.port}" />
+    </http:listener-config>
+    
+    <api-gateway:autodiscovery apiId="15636472" doc:name="API Autodiscovery" doc:id="8dbf4666-22c6-408a-8cbf-4804fb5741ad" flowRef="mule4-oauth-exampleFlow" />
+	<flow name="mule4-oauth-exampleFlow">
+        <http:listener doc:name="Listener" config-ref="HTTP_Listener_config" path="/resource"/>
+        <set-payload value="#['Hello World']" doc:name="Set Payload" mimeType="text/plain"/>
+    </flow>
+    
+</mule>
+
+

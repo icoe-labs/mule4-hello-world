@@ -1,0 +1,20 @@
+{
+  "configs": [
+    "mule4-hello-world.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "mule4-hello-world",
+  "minMuleVersion": "4.1.1",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedResources": []
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
