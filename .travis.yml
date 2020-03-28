@@ -1,0 +1,14 @@
+sudo: true
+language: java
+jdk:
+  - oraclejdk9
+
+cache:
+  directories:
+    - $HOME/.m2
+
+jobs:
+  include:
+    - stage: tests
+      script: "mvn clean package"
+      
