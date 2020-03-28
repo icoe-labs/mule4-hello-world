@@ -14,7 +14,7 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
     
     <api-gateway:autodiscovery apiId="15636472" doc:name="API Autodiscovery" doc:id="8dbf4666-22c6-408a-8cbf-4804fb5741ad" flowRef="mule4-oauth-exampleFlow" />
 	<flow name="mule4-oauth-exampleFlow">
-        <http:listener doc:name="Listener" config-ref="HTTP_Listener_config" path="/resource"/>
+        <http:listener doc:name="Listener" config-ref="HTTP_Listener_config" path="/hello"/>
         <set-payload value="#['Hello World']" doc:name="Set Payload" mimeType="text/plain"/>
     </flow>
     
