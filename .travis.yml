@@ -1,12 +1,15 @@
 sudo: true
 language: java
 jdk:
-  - oraclejdk9
+  - openjdk9 
 
 cache:
   directories:
     - $HOME/.m2
 
+before_install:
+  - sudo cp -f -v ./settings.xml /usr/local/maven/conf
+  
 jobs:
   include:
     - stage: tests
