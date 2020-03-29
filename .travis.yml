@@ -1,4 +1,6 @@
 sudo: true
+os: linux
+dist: xenial
 language: java
 jdk:
   - openjdk9 
@@ -10,8 +12,11 @@ cache:
 before_install:
   - sudo cp -f -v ./settings.xml /usr/local/maven/conf
   
-jobs:
-  include:
-    - stage: tests
-      script: "mvn clean package"
-      
+install: skip
+  
+deploy:
+  - provider: script
+    script: mvn clean deploy -DskipTests -DmuleDeploy -Denv=$MULE_ENV -Dch.environment=$CH_ENVIRONMENT -Dch.username=$CH_USERNAME -Dch.password=$CH_PASSWORD -Denv.clientId=$ANYPOINT_CLIENT_ID -Denv.clientSecret=$ANYPOINT_CLIENT_SECRET -Dch.application.name=$CH_APP_NAME -Dch.businessGroupId=$BUSINESS_GROUP -Dch.workerType=$CH_WORKERTYPE -Dch.workers=$CH_WORKERS
+    on:
+        condition: $TRAVIS_BRANCH =~ ^(master|release|develop)$ && $CONTINUOUS_DEPLOYMENT = "true"
+   
