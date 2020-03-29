@@ -20,12 +20,32 @@
 
   <build>
     <plugins>
-      <plugin>
+	  <plugin>
         <groupId>org.mule.tools.maven</groupId>
         <artifactId>mule-maven-plugin</artifactId>
         <version>${mule.maven.plugin.version}</version>
         <extensions>true</extensions>
         <configuration>
+          <cloudHubDeployment>
+				<uri>https://anypoint.mulesoft.com</uri>
+				<muleVersion>${app.runtime}</muleVersion>
+				<username>${ch.username}</username>
+				<password>${ch.password}</password>
+				<applicationName>${ch.application.name}</applicationName>
+				<objectStoreV2>true</objectStoreV2>
+				<businessGroupId>${ch.businessGroupId}</businessGroupId>
+				<environment>${ch.environment}</environment>
+				<workerType>${ch.workerType}</workerType>
+				<workers>${ch.workers}</workers>
+				<properties>
+				  <https.host>0.0.0.0</https.host>
+				  <https.port>8082</https.port>
+				  <mule.env>${env}</mule.env>
+				  <anypoint.platform.client_id>${env.clientId}</anypoint.platform.client_id>
+				  <anypoint.platform.client_secret>${env.clientSecret}</anypoint.platform.client_secret>
+				</properties>
+			</cloudHubDeployment>
+			<classifier>mule-application</classifier>
         </configuration>
       </plugin>
       <plugin>
