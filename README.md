@@ -1,4 +1,4 @@
-## mule4-hello-world
+#mule4-hello-world
 
 ### Master Branch Build Status
 [![Build Status Master](https://travis-ci.org/icoe-labs/mule4-hello-world.svg?branch=master)](https://travis-ci.org/icoe-labs/mule4-hello-world)
