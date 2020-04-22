@@ -1,4 +1,3 @@
-sudo: true
 os: linux
 dist: xenial
 language: java
@@ -10,7 +9,7 @@ cache:
     - $HOME/.m2
 
 before_install:
-  - sudo cp -f -v ./settings.xml /usr/local/maven/conf
+  - cp -f -v ./settings.xml /usr/local/maven/conf
   
 install: skip
   
