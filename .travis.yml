@@ -9,7 +9,7 @@ cache:
     - $HOME/.m2
 
 before_install:
-  - cp -f -v ./settings.xml /usr/local/maven/conf
+  - sudo cp -f -v ./settings.xml /usr/local/maven/conf
   
 install: skip
   
