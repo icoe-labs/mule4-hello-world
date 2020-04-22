@@ -2,7 +2,7 @@
   "configs": [
     "mule4-hello-world.xml"
   ],
-  "secureProperties": [],
+  "secureProperties": ["anypoint.platform.client_secret", "mule.key"],
   "redeploymentEnabled": true,
   "name": "mule4-hello-world",
   "minMuleVersion": "4.2.1",
